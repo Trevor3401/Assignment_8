@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="stylesV1.css">
+    <script type="text/javascript" src="combined.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+    <!-- header begin -->
+    <script type="text/javascript">
+    </script>
+    <header>
+        <nav>
+            <div id="logo">
+                <a href="#" title="T. Brooks Digital Agency">
+                <h1>T. Brooks<br>
+                Digital Agency</h1></a>
+            </div>
+            <ul id="menu">
+                <li>
+                    <a href="100715ServiceV1.html" title=
+                    "Services">Services</a>
+                </li>
+                <li>
+                    <a href="100715AboutUsV1.html" title="About Us">About
+                    Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header><!-- hero begin -->
+    <section>
+        <div id="hero">
+            <div id="heroimage"></div>
+            <p id="herotext">T. Brooks is a digital agency focusing in
+            strategy, website optimization, testing, design and technology for
+            luxury and lifestyle brands</p>
+        </div>
+        <div class="layout">
+            <div class="row">
+                <!-- section about the company -->
+                <div class="col-1"><img src=
+                "https://c2.staticflickr.com/8/7215/6856179714_6a1b9f9f10_b.jpg"></div>
+                <div class="col-1">
+                    <h1>Why Choose T. Brooks?</h1>
+                    <p>In eu tristique quam, ut vestibulum quam. Duis ut mi
+                    egestas, rhoncus arcu sit amet, rhoncus mauris. Cras a
+                    nulla dapibus, tristique ex at, tempus ex. Donec fermentum
+                    massa quis tempus facilisis. Fusce nec viverra velit.
+                    Nullam iaculis sapien sit amet erat viverra commodo. Mauris
+                    sagittis ullamcorper leo eget auctor.</p>
+                </div>
+            </div>
+            <div class="row">
+                <!-- section about the company -->
+                <div class="col-1">
+                    <h1>How do you get started?</h1>
+                    <p>In eu tristique quam, ut vestibulum quam. Duis ut mi
+                    egestas, rhoncus arcu sit amet, rhoncus mauris. Cras a
+                    nulla dapibus, tristique ex at, tempus ex. Donec fermentum
+                    massa quis tempus facilisis. Fusce nec viverra velit.
+                    Nullam iaculis sapien sit amet erat viverra commodo. Mauris
+                    sagittis ullamcorper leo eget auctor.</p>
+                </div>
+                <div class="col-1"><img src=
+                "https://c2.staticflickr.com/8/7215/6856179714_6a1b9f9f10_b.jpg"></div>
+            </div>
+        </div>
+        <div id="ctahpwrap">
+<!--POPUP-->    
+    
+    <div id="blanket" style="display:none;"></div>
+    <div id="popUpDiv" style="display:none;">
+    
+        <a href="##" onclick="popup('popUpDiv')">X</a>
+    </div>  
+  <a id="ctabutton" href="##" onclick="popup('popUpDiv')">Click to Open CSS Pop Up</a>
+<!-- / POPUP--> 
+        </div>
+    </section>
+    <footer></footer>
+</body>
+<script type="text/javascript">
+    function toggle(div_id) {
+    var el = document.getElementById(div_id);
+    if ( el.style.display == 'none' ) { el.style.display = 'block';}
+    else {el.style.display = 'none';}
+}
+   function blanket_size(popUpDivVar) {
+        if (typeof window.innerWidth != 'undefined') {
+            viewportheight = window.innerHeight;
+        } else {
+            viewportheight = document.documentElement.clientHeight;
+        }
+        if ((viewportheight > document.body.parentNode.scrollHeight) && (
+            viewportheight > document.body.parentNode.clientHeight)) {
+            blanket_height = viewportheight;
+        } else {
+            if (document.body.parentNode.clientHeight > document.body.parentNode
+                .scrollHeight) {
+                blanket_height = document.body.parentNode.clientHeight;
+            } else {
+                blanket_height = document.body.parentNode.scrollHeight;
+            }
+        }
+        var blanket = document.getElementById('blanket');
+        blanket.style.height = blanket_height + 'px';
+        var popUpDiv = document.getElementById(popUpDivVar);
+        popUpDiv_height = blanket_height / 2 - 200; //200 is half popup's height
+        popUpDiv.style.top = popUpDiv_height + '-px';
+    }
+
+    function window_pos(popUpDivVar) {
+        if (typeof window.innerWidth != 'undefined') {
+            viewportwidth = window.innerHeight;
+        } else {
+            viewportwidth = document.documentElement.clientHeight;
+        }
+        if ((viewportwidth > document.body.parentNode.scrollWidth) && (
+            viewportwidth > document.body.parentNode.clientWidth)) {
+            window_width = viewportwidth;
+        } else {
+            if (document.body.parentNode.clientWidth > document.body.parentNode
+                .scrollWidth) {
+                window_width = document.body.parentNode.clientWidth;
+            } else {
+                window_width = document.body.parentNode.scrollWidth;
+            }
+        }
+        var popUpDiv = document.getElementById(popUpDivVar);
+        window_width = window_width / 2 - 200; //200 is half popup's width
+        popUpDiv.style.left = window_width + 'px';
+    }
+function popup(windowname) {
+    blanket_size(windowname);
+    window_pos(windowname);
+    toggle('blanket');
+    toggle(windowname);     
+}
+</script>
+</html>
